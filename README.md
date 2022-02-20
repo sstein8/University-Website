@@ -3,7 +3,8 @@ University website built with HTML, CSS, Python Flask, and MySQL
 
 (does not demonstrate all features)
 
-![demo](ezgif-4-c6367369c1ec.gif)
+![ezgif-4-c6367369c1ec](https://user-images.githubusercontent.com/76801679/154829576-49b033c4-31bb-483d-af1c-6f5abbfb4f52.gif)
+
 
 This website is the academic hub for students of Zoom University. There are two main features of the website, the registration side and the advising side. The site begins at a login page where anyone affiliated with the university can log in. This includes graduate students, faculty, graduate secretaries, and the system administrator. When an individual logs in, they are presented with a homepage that has buttons that direct them to either the advising features or the registration features.
 
