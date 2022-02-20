@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/course_registration_style.css" media="screen"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="static/course_catalog_style.css" media="screen"/>
+        <title>Course Registration</title>
+    </head>
+
+        
+    <body>
+        <a href="/main_hub_registration">
+            <button type="button" class = "w3-Button w3-round-large w3-gray">Registration Main Hub</button>
+        </a>
+        <br>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Section</th>
+                <th>Semester</th>
+                <th>Year</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Professor</th>
+                <th>Available Seats</th>
+                <th>Location</th>
+                <th>Course Number</th>
+                <th>course_ID</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in table %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <td>{{row[7]}}</td>
+                    <td>{{row[8]}}</td>
+                    <td>{{row[9]}}</td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <p>Register by entering course ID</p>
+        <br>
+        <form action="/course_registration_page" method="POST">
+            Course ID: <input type="text" lass = "w3-border w3-round-large" name = "course_ID">
+            <br>
+            <input type="submit"  name="submit">
+        </form>
+        {{reg_failed_msg}}
+        {{PHD_Error}}
+       
+        <table style="width:100%">
+            <thead>
+                <br>
+                <h3>Registered Courses</h3>
+                <tr>
+                    <th>Section</th>
+                    <th>Semester</th>
+                    <th>Year</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Professor</th>
+                    <th>Location</th>
+                    <th>Course Number</th>
+                    <th>course_ID</th>
+                    <th>Drop Class</th>
+                </tr>
+                </thead>
+            <tbody>
+                {% for row in table2 %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <td>{{row[7]}}</td>
+                    <td>{{row[8]}}</td>
+                    <td>
+                        <form method="POST", action="/drop_class">
+                            <input type="hidden" name="course_ID" value="{{row[8]}}"/>
+                            <input type="hidden" name="course_num" value="{{row[7]}}"/>
+                            <input name="form" type="submit"  value="X"/>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+    </body>
+</html>

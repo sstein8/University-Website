@@ -1,0 +1,39 @@
+<html>
+  
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/login_style.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Log In</title>
+  </head>
+  <body>
+    <h2 style ="background-color: rgb(243, 239, 177)"> Create Student Account </h2>
+    <!-- only students can create account -->
+    <a href="/create_account_student">
+      <button type="button" class = "w3-Button w3-round-large w3-gray" >Create Student Account</button>
+    </a>
+    <br>
+    <form action="/log_in" method="POST">
+      <!-- Implement form asking for username and password -->
+      <h2 style ="background-color: rgb(243, 239, 177)"> Log in with your University ID </h2>
+      <br>
+      
+      University ID:
+      <input class = "w3-border w3-round-large" type="text" name = "uni_ID"><br>
+      Password:
+      <input class = "w3-border w3-round-large" type="text" name = "password"><br>
+      <input class="w3-button  w3-gray w3-round-large" type="submit" value="Submit">
+
+      <!-- <input type="submit" name="submit"> -->
+    </form>
+    {{message}}
+    <br>
+    <br>
+    <img src="/static/advisors/zoomLogo.png" width="500" height="400"> <br>
+
+    <!-- <br>
+    <a href="/reset">
+      <button type="button">Reset</button>
+    </a>  -->
+
+  </body>
+</html> 

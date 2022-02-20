@@ -1,0 +1,33 @@
+
+<html>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head>
+      <title>Student Data</title>
+    </head>
+  
+    <body> 
+    <form action = '/grad_approve' method = 'POST'>
+  
+    Enter ID's of students to access their information
+    <input type = "text" class = "w3-border w3-round-large"  name="ID"></input>
+  
+    <br>
+    <br>
+     
+    Please Enter "Yes" if the student meets the graduation requirements or "No" if the student doesnt
+  
+    <p>Yes or No <input type = "text" class = "w3-border w3-round-large"  name = "Yes/No" /></p>
+    <p><input type = "submit" value = "Submit" class = "w3-border w3-round-large" /></p>
+  
+  </form>
+  {{msg}}
+    <br>
+    <a href="/grad_secretary">
+      <button type="button" class = "w3-border w3-round-large">Go back to Grad Secretary Home</button>
+    </a> 
+    <br>  
+    <body>
+  <html>

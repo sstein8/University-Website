@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Admin Create Course</title>
+    </head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body style="background-color: rgb(230, 250, 255)">
+   
+        <h1>Add New Course</h1>
+        <br>
+        <a href="/main_hub_registration">
+          <button type="button">Registration Main Hub</button>
+        </a>
+        <br>
+        <br>
+        <form action="/admin_create_course" method="POST">
+
+
+            Course Title:  <input class = "w3-border w3-round-large" type="text" name = "title">
+            <br>
+            Course Number: <input class = "w3-border w3-round-large" type="text" name = "course_num">
+
+            <br>
+            Course ID: <input class = "w3-border w3-round-large" type="text" name = "course_ID">
+            <br>
+            Credit Hours: <input class = "w3-border w3-round-large" type="text" name = "credit_hrs">
+            <br>
+            Department: <input class = "w3-border w3-round-large" type="text" name = "dept_name">
+            <br>
+            Section Number: <input class = "w3-border w3-round-large" type="text" name = "sec_ID">
+            <br>
+            Professor ID: <input class = "w3-border w3-round-large" type="text" name = "faculty_ID">
+            <br>
+     
+            <label  for="Building">Building:</label>
+            <select class = "w3-border w3-round-large" name="Building" id="Building">
+              <option value="Jeter Hall">Jeter Hall</option>
+              <option value="Ruth Hall">Ruth Hall</option>
+              <option value="Gehrig Hall">Gehrig Hall</option>
+              <option value="DiMaggio Hall">DiMaggio Hall</option>
+              <option value="Torre Hall">Torre Hall</option>
+              <option value="Mantle Hall">Mantle Hall</option>
+              <option value="Berra Hall">Berra Hall</option>
+              <option value="Posada Hall">Posada Hall</option>
+              <option value="Matingly Hall">Matingly Hall</option>
+              <option value="Rivera Hall">Rivera Hall</option>
+              <option value="Robinson Hall">Robinson Hall</option>
+            </select>
+            <br>
+            Room Number: <input class = "w3-border w3-round-large" type="text" name = "room_number">
+            <br>
+            Seats Available: <input class = "w3-border w3-round-large" type="text" name = "room_cap">
+            <br>
+            Year Taught: <input class = "w3-border w3-round-large" type="text" name = "year">
+            <br>
+
+            <label for="Semester">Semester:</label>
+            <select class = "w3-border w3-round-large" name="Semester" id="Semester">
+              <option value="Fall">Fall</option>
+              <option value="Spring">Spring</option>
+            </select>
+            <br>
+          
+            <label for="Day">Day Taught:</label>
+            <select class = "w3-border w3-round-large" name="Day" id="Day">
+              <option value="M">Monday</option>
+              <option value="T">Tuesday</option>
+              <option value="W">Wednesday</option>
+              <option value="R">Thursday</option>
+              <option value="F">Friday</option>
+            </select>
+
+            <br>
+            <label for="Time">Time:</label>
+            <select class = "w3-border w3-round-large" name="Time" id="Time">
+              <option value=1500>15:00-17:30</option>
+              <option value=1600>16:00-18:30</option>
+              <option value=1800>18:00-20:20</option>
+            </select>
+
+            <br>
+            Course Description:<br>
+            <textarea class = "w3-border w3-round-large" name="course_info" cols="50" rows="10"></textarea>
+            <br>
+            <br>
+            <input type="submit" name="submit">
+        </form>
+        <br><br>
+        {{error_msg}}
+    </body>
+</html>

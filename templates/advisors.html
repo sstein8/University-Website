@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Advisors with Grad Students Page</title>
+  </head>
+  <body>
+  <br>
+  <h3>List of Computer Science Advisors:</h3>
+  <br>
+  
+  Professor Gabe Parmer
+  <br>
+  <img src="/static/advisors/parmer.jpg" width="150" height="200"> <br>
+  Professor Bhagi Narahari
+  <br>
+  <img src="/static/advisors/narahari.jpg" width="150" height="200"> <br>
+
+
+  <br>
+  Below is where you can match advisors with students
+  <br>
+  <form action = '/advisors' method = 'POST'>
+
+  Type Advisor ID: <br>
+  <input type = "num" class = "w3-border w3-round-large" name="advisorID"></input><br>
+  Type Student ID <br>
+  <input type = "num" class = "w3-border w3-round-large" name="ID"></input><br>
+   
+  Press submit when you're ready
+  
+  <input type="submit" class = "w3-border w3-round-large" name="Update Advisors With Students List">
+  </form>
+  <a href="/faculty_advisor">
+    <button type="button" class = "w3-button w3-round-large w3-gray">Go Back to Faculty Advisor Home</button>
+  </a> 
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+  <head>
+
+
+    <link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Main Hub Advising</title>
+  </head>
+  <body>
+    <h1>Advising Main Hub</h1>
+    <br>
+
+  <p hidden>{{role1}}</p>
+  <br>
+  <br>
+    <a href="/home_page">
+      <button type="button" class = "w3-button w3-round-large w3-gray">Back To Home</button>
+    </a> 
+    <br>
+    <br>
+  
+    <!-- everyone can view course catalog -->
+    <a href="/course_catalog">
+      <button type="button" class = "w3-Button w3-round-large w3-gray">Course Catalog</button>
+    </a> 
+    <br>
+
+    <!-- systems adminstrator home page -->
+    {% if role1 == "System Admin" : %}
+      <a href="/system_admin">
+        <button type="button" class = "w3-button w3-round-large w3-gray" > Go to Systems Administrator Home </button>
+      </a> 
+      <br>
+    {% endif %}
+
+    <!-- student home page -->
+    {% if role1 == "Student" :%}
+      <a href="/grad_student">
+        <button type="button" class = "w3-button w3-round-large w3-gray">Go to Grad Student Home </button>
+      </a> 
+      <br>
+    {% endif %}
+      
+    <!-- faculty advisor -->
+    {% if role1 == "Faculty": %}
+      <a href="/faculty_advisor">
+        <button type="button" class = "w3-button w3-round-large w3-gray">Go to Faculty Advisor Home</button>
+      </a> 
+      <br>
+    {% endif %}
+      
+    <!-- only a gsec can see their own teaching schedule -->
+    {% if role1 == "Grad Secretary": %}
+      <a href="/grad_secretary">
+        <button type="button" class = "w3-button w3-round-large w3-gray">Go to Graduate Secretary Home</button>
+      </a> 
+      <br>
+
+    {% endif %}
+
+        <!-- student home page -->
+        {% if role1 == "Alumni" :%}
+        <a href="/alumni">
+          <button type="button" class = "w3-button w3-round-large w3-gray">Go to Alumni Home </button>
+        </a> 
+        <br>
+      {% endif %}
+
+
+    
+    <br>
+    <br>
+
+    <a href="/logout">
+        <button type="button" class = "w3-button w3-round-large w3-gray">Log Out</button>
+    </a> 
+    
+  </body>
+</html> 

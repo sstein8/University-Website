@@ -1,0 +1,55 @@
+<html>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <head>
+    <title>View Student's Transcript</title>
+  </head>
+
+  <body>
+
+    <!-- Choose a student by entering their ID
+    <input type="num" name="ID"></input>
+    <input type="submit"> -->
+    {{ msg }}
+    <br>
+    GWID: {{uni_ID}}
+    <br>
+    Program: {{program}}
+    <br>
+    GPA: {{ avgGPA }}
+    <br>
+    Total Credits: {{ totalCredits }}
+
+    <p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Course Number</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in results %}
+            <tr>
+              <td>{{ item[0] }}</td>
+              <td>{{ item[1] }}</td>
+              <td>{{ item[2] }}</td>
+              <td>{{ item[3] }}</td>
+              <td>{{ item[4] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </p>
+
+    <a href="/main_hub_advising">
+      <button type="button" class = "w3-button w3-round-large w3-gray"> Advising Main Hub</button>
+   </a>
+
+  </body>
+</html>

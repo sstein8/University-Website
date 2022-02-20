@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Student Schedule</title>
+    </head>
+        <link rel="stylesheet" type="text/css" href="static/course_catalog_style.css" media="screen"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body style="background-color: paleturquoise; font-family:Century Gothic,CenturyGothic,AppleGothic,sans-serif;">
+        <h1>Current Schedule</h1>
+        <br>
+        <a href="/main_hub_registration">
+            <button type="button" class="w3-button  w3-gray w3-round-large">Registration Main Hub</button>
+        </a>
+        <br>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Department</th>
+                <th>Title</th>
+                <th>Course Number</th>
+                <th>Credit Hours</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Course ID</th>
+
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in table %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td> 
+                    
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+      
+    </body>
+</html>

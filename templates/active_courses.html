@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Active Courses </title>
+    </head>
+        <link rel="stylesheet" type="text/css" href="static/course_catalog_style.css" media="screen"/>
+    <body>
+        <h1>Teaching Schedule</h1>
+        <br>
+        <a href="/main_hub_registration">
+]            <button type="button">Registration Main Hub</button>
+        </a>
+        <br>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Department</th>
+                <th>Title</th>
+                <th>Course Number</th>
+                <th>Credit Hours</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Course ID</th>
+
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in table %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td> 
+                    
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+      
+    </body>
+</html>

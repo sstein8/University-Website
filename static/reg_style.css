@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+
+}
+body,header,h2 {
+    background-color: paleturquoise;
+    font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif; 
+    text-align: center;
+
+}

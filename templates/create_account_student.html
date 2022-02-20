@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Create Account Student</title>
+   
+  </head>
+  <body style="background-color: rgb(230, 250, 255)">
+    <a href="/log_in">
+      <button type="button">Back To Log In</button>
+    </a>
+    <form action="/create_account_student" method="POST">
+    <!-- Implement form asking for username and password -->
+        <h2> Create an account </h2>
+        <br>
+            First Name:
+            <input type="text" name = "fname"><br>
+            Last Name: 
+            <input type="text" name = "lname"><br>
+            University ID:
+            <input type="text" name = "uni_ID"><br>
+            Password:
+            <input type="text" name = "password"><br>
+            email:
+            <input type="text" name = "email"><br>
+            Address:
+            <input type="text" name = "address"><br>
+            Role:<br>
+            <input type="checkbox" id="Grad Student Masters" name="Grad Student Masters" value="Grad Student Masters">
+                <label for="Grad Student"> Grad Student (Masters)</label><br>
+            <input type="checkbox" id="Grad Student PHD" name="Grad Student PHD" value="Grad Student PHD">
+                <label for="Grad Student"> Grad Student (PHD)</label><br><br>
+  
+            <input type="submit" value="Submit">
+      
+    </form>
+    {{message}} <!--either sucessful or unsuccessful account creation-->
+  </body>
+</html> 

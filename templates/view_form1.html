@@ -1,0 +1,42 @@
+
+<html>
+
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>View Student's Form 1</title>
+  </head>
+  <body>
+    <form action = "/view_form1" method="POST">
+      Choose a student by entering their ID
+      <input type="num" name="ID"></input>
+      <input type="submit" >
+    </form>
+
+    Viewing {{ name }}'s Form 1
+    <br>
+    <p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Course Number</th>
+            <th>Course Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in results %}
+          <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </p>
+    <br>
+    <a href="/faculty_advisor">
+      <button type="button" class = "w3-button w3-round-large w3-gray">Go Back to Faculty Advisor Home</button>
+    </a> 
+  </body>
+</html>

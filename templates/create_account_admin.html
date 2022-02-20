@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Create Account Admin</title>
+
+  </head>
+  <link rel="stylesheet" type="text/css" href="static/admin_create_user_style.css" media="screen"/>
+  <body style="background-color: rgb(230, 250, 255)">
+    <a href="/main_hub_registration">
+      <button type="button">Back To Registration Main Hub</button>
+    </a>
+    <form action="/create_account_admin" method="POST">
+    <!-- Implement form asking for username and password -->
+        <h2> Create a New University Account </h2>
+        <br>
+            First Name:
+            <input type="text" name = "fname"><br>
+            Last Name: 
+            <input type="text" name = "lname"><br>
+            University ID:
+            <input type="text" name = "uni_ID"><br>
+            Password:
+            <input type="text" name = "password"><br>
+            email:
+            <input type="text" name = "email"><br>
+            Address:
+            <input type="text" name = "address"><br>
+            Role:<br>
+            <input type="checkbox" id="Grad Student Masters" name="Grad Student Masters" value="Grad Student Masters">
+                <label for="Grad Student"> Grad Student (Masters)</label><br>
+            <input type="checkbox" id="Grad Student PHD" name="Grad Student PHD" value="Grad Student PHD">
+                <label for="Grad Student"> Grad Student (PHD)</label><br>
+            <input type="checkbox" id="Grad Secretary" name="Grad Secretary" value="Grad Secretary">
+                <label for="Grad Secretary"> Grad Secretary</label><br>
+            <input type="checkbox" id="Faculty" name="Faculty" value="Faculty">
+                <label for="Faculty"> Faculty</label><br><br>
+            <input type="submit" value="Submit">
+      
+    </form>
+    {{message}} <!--either sucessful or unsuccessful account creation-->
+  </body>
+</html> 

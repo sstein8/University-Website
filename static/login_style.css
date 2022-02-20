@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+
+}
+body,header,h2 {
+background-color: cornflowerblue;
+font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif; 
+text-align: center;
+
+}
+

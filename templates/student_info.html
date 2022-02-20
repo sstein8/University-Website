@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Student Information</title>
+    </head>
+        <link rel="stylesheet" type="text/css" href="static/course_catalog_style.css" media="screen"/>
+    <body style="background-color: rgb(230, 250, 255)">
+        <h1>Student Information For Your Courses</h1>
+        <a href="/main_hub_registration">
+            <button type="button">Registration Main Hub</button>
+        </a>
+        <br>
+
+
+        {{message}}
+
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Last name, First name</th>
+                <th>Student ID</th>
+                <th>Grading</th>
+                <th>Transcript</th>
+               
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in table %}
+                <tr>
+                    <td>{{row[0]}}, {{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>Enter a grade:
+                        <form action="/grading" method="POST">
+                            <input type="text" name = "grade">
+                            <input type="hidden" name="stid" value="{{row[2]}}"/>
+                            <input type="submit" name="submit">
+                        </form>
+                    </td> 
+                    <td> 
+                        <form method="POST", action="/students_transcript">
+                            <input type="hidden" name="student_ID" value="{{row[2]}}"/>
+                            <input name="form" type="submit" value="Open"/>
+                        </form>
+                      </td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+       
+    </body>
+</html>

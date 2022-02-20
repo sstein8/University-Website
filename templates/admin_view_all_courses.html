@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>All Courses Being Taught This Semester</title>
+    </head>
+        <link rel="stylesheet" type="text/css" href="static/course_catalog_style.css" media="screen"/>
+    <body style="background-color: rgb(230, 250, 255)">
+        <a href="/main_hub_registration">
+            <button type="button">Registration Main Hub</button>
+        </a>
+        <br>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Section</th>
+                <th>Semester</th>
+                <th>Year</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Professor</th>
+                <th>Course Number</th>
+                <th>course_ID</th>
+                <th>View Class Transcripts</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in table %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <td>{{row[7]}}</td>
+                    <td>
+                        <form method="POST", action="/student_info">
+                            <input type="hidden" name="course_ID" value="{{row[7]}}"/>
+                            <input type="hidden" name="course_num" value="{{row[6]}}"/>
+                            <input name="form" type="submit" value="Open Info"/>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+    </body>
+</html>
+        

@@ -1,0 +1,39 @@
+
+<html>
+    <!-- CSS only -->
+
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/advising.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>View Advisees</title>
+  </head>
+  <body>
+    View Advisees
+    <br>
+    <br>
+    <p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in results %}
+          <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </p>
+    <a href = {{ url_for('faculty_advisor') }}>Go Back</a>
+  </body>
+
+</html>

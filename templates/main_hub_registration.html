@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/main_hub_registration_style.css" media="screen"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Main Hub Registration</title>
+  </head>
+  <body>
+    <h1>Registration Main Hub</h1>
+    <br>
+    <a href="/home_page">
+      <button type="button" class="w3-button  w3-gray w3-round-large">Back To Home Page</button>
+    </a> 
+
+  <p hidden>{{role1}}</p>
+  <br>
+  <br>
+  
+    <!-- everyone can view course catalog -->
+    <a href="/course_catalog">
+      <button type="button" class="w3-button  w3-gray w3-round-large">Course Catalog</button>
+    </a> 
+    <br>
+
+    <!-- Only studentsAnyone can update their account info -->
+    {% if role1  == "System Admin": %}
+      <a href="/update_account_info">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Update Account Information</button>
+      </a> 
+      <br>
+    {% endif %}
+
+    <!-- students can register for classes -->
+    {% if role1 == "Student": %}
+      <a href="/course_registration_page">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Register For Courses</button>
+      </a> 
+      <br>
+    {% endif %}
+      
+    <!-- only a student can view their own transcript and schedule here -->
+    {% if role1 == "Student": %}
+      <a href="/transcript">
+        <button type="button" class="w3-button  w3-gray w3-round-large">View Transcript</button>
+      </a> 
+      <br>
+
+      <a href="/student_schedule">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Student Schedule</button>
+      </a> 
+      <br>
+    {% endif %}
+      
+    <!-- only a gsec can see their own teaching schedule -->
+    {% if role1 == "Grad Secretary": %}
+      <a href="/gs_schedule">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Teaching Schedule</button>
+      </a> 
+      <br>
+
+      <a href="/course_info_gs">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Access Class Records</button>
+      </a>
+      <br>
+    {% endif %}
+
+      <!-- faculty can view their active course and specific course information -->
+    {% if role1 == "Faculty": %}
+      <a href="/active_courses">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Teaching Schedule</button>
+      </a> 
+      <br>
+
+      <a href="/course_info">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Access Class Records</button>
+      </a>
+      <br>
+    {% endif %}
+    
+    <!-- system admins can look up all courses taught by year, then search by course, and view transcripts of all the students -->
+    {% if role1 == "System Admin": %} 
+      <a href="/create_account_admin">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Create New User Account</button>
+      </a>
+      <br>
+  
+      <a href="/admin_choose_year">
+        <button type="button" class="w3-button  w3-gray w3-round-large">View All Course History</button>
+      </a> 
+      <br>
+      
+      <a href="/admin_create_course">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Add New Course To Catalog</button>
+      </a> 
+
+    {% endif %}
+   
+
+    <br> 
+    <br>
+
+    <a href="/logout">
+        <button type="button" class="w3-button  w3-gray w3-round-large">Log Out</button>
+    </a> 
+    
+  </body>
+</html> 
